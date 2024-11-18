@@ -8,7 +8,7 @@ load_dotenv(find_dotenv())
 
 def process_weather(query):
 
-    url = f"{os.getenv("URL")}?q={query}&key={os.getenv("WEATHER_KEY")}"
+    url = f"{os.getenv('URL')}?q={query}&key={os.getenv('WEATHER_KEY')}"
 
     r = requests.get(url)
 
