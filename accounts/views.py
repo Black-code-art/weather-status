@@ -106,6 +106,7 @@ class WeatherUpdateView(APIView):
     def get(self, request):
         query = request.GET.get('query', None)
         if query is None:
+            
             all_weather = WeatherUpdate.objects.all().order_by('-created_at')
             return Response(WeatherUpdateSerializer(all_weather, many=True).data, status=200)
         data, status = process_weather(query)
