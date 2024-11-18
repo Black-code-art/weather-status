@@ -12,11 +12,15 @@ services:
     buildCommand: "./build.sh"
     startCommand: "python -m gunicorn config.asgi:application -k uvicorn.workers.UvicornWorker"
     envVars:
-      - key: db_URL
+      - key: db_url
         fromDatabase:
           name: weather_db
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
       - key: WEB_CONCURRENCY
-      value: 4
+        value: 4
+      - key : URL
+        value : False
+      - key : WEATHER_KEY
+        value : False
