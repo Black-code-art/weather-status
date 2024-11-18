@@ -31,7 +31,7 @@ _pycache_/
 
 # C extensions
 *.so
-*.sh
+.sh
 
 # Distribution / packaging
 .Python
